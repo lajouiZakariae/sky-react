@@ -4,7 +4,6 @@ import BreadCrumbsPage from 'src/pages/BreadCrumbsPage';
 import { ButtonsPage } from 'src/pages/ButtonsPage';
 import FormsPage from 'src/pages/FormsPage';
 import HomePage from 'src/pages/HomePage';
-import TablesPage from 'src/pages/TablesPage';
 import InputsPage from '../pages/InputsPage';
 import LinksPage from 'src/pages/LinksPage';
 import MultiSectionFormPage from 'src/pages/MultiSectionFormPage';
