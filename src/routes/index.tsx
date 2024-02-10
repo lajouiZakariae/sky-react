@@ -1,14 +1,15 @@
 import { Outlet, RouteObject } from 'react-router-dom';
 import { authRoutes } from './auth';
 import Dashboard from 'src/layout/Dashboard/Dashboard';
+import GrayDashboard from 'src/layout/GrayDashboard/GrayDashboard';
 
 export const routes: RouteObject[] = [
     {
         path: '/',
         element: (
-            <Dashboard>
+            <GrayDashboard>
                 <Outlet />
-            </Dashboard>
+            </GrayDashboard>
         ),
         children: [...authRoutes],
     },
