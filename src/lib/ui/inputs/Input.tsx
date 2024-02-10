@@ -1,4 +1,4 @@
-import { Plates } from 'src/pages/ButtonsPage';
+import { Plates } from 'src/pages/ui-elements/ButtonsPage';
 import { SubHeading } from '../SubHeading';
 import InputGroup from './InputGroup';
 import InputGroupWithMark from './InputGroupWithMark';

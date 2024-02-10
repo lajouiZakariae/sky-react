@@ -1,15 +1,15 @@
 import { RouteObject } from 'react-router-dom';
-import AlertsPage from 'src/pages/AlertsPage';
-import BreadCrumbsPage from 'src/pages/BreadCrumbsPage';
-import { ButtonsPage } from 'src/pages/ButtonsPage';
-import FormsPage from 'src/pages/FormsPage';
+import AlertsPage from 'src/pages/ui-elements/AlertsPage';
+import BreadCrumbsPage from 'src/pages/ui-elements/BreadCrumbsPage';
+import { ButtonsPage } from 'src/pages/ui-elements/ButtonsPage';
+import FormsPage from 'src/pages/forms/FormsPage';
 import HomePage from 'src/pages/HomePage';
-import InputsPage from '../pages/InputsPage';
-import LinksPage from 'src/pages/LinksPage';
-import MultiSectionFormPage from 'src/pages/MultiSectionFormPage';
+import InputsPage from '../pages/ui-elements/InputsPage';
+import LinksPage from 'src/pages/ui-elements/LinksPage';
+import MultiSectionFormPage from 'src/pages/forms/MultiSectionFormPage';
 import SimpleTablePage from 'src/pages/tables/SimpleTablePage';
 import CategorizedTablePage from 'src/pages/tables/CategorizedTablePage';
-import TableWithSubRowsPage from 'src/pages/tables/TableWithSubrowsPage';
+import TableWithSubrowsPage from 'src/pages/tables/TableWithSubrowsPage';
 
 export const authRoutes: RouteObject[] = [
     {
@@ -21,7 +21,7 @@ export const authRoutes: RouteObject[] = [
         children: [
             { index: true, Component: SimpleTablePage },
             { path: 'categorized', Component: CategorizedTablePage },
-            { path: 'with-subrows', Component: TableWithSubRowsPage },
+            { path: 'with-subrows', Component: TableWithSubrowsPage },
         ],
     },
     {
