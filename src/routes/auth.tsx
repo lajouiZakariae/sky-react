@@ -10,6 +10,7 @@ import MultiSectionFormPage from 'src/pages/forms/MultiSectionFormPage';
 import SimpleTablePage from 'src/pages/tables/SimpleTablePage';
 import CategorizedTablePage from 'src/pages/tables/CategorizedTablePage';
 import TableWithSubrowsPage from 'src/pages/tables/TableWithSubrowsPage';
+// import MultiStepForm from 'src/lib/ui/forms/MultiStepForm';
 
 export const authRoutes: RouteObject[] = [
     {
@@ -29,6 +30,7 @@ export const authRoutes: RouteObject[] = [
         children: [
             { index: true, Component: FormsPage },
             { path: 'multi-section', Component: MultiSectionFormPage },
+            // { path: 'multi-step', Component: MultiStepForm },
         ],
     },
     {

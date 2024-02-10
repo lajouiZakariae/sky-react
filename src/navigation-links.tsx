@@ -30,6 +30,11 @@ export const navigation = (currentPathname: string): NavLink[] => [
                 href: '/forms/multi-section',
                 current: currentPathname === '/forms/multi-section',
             },
+            // {
+            //     name: 'Multi Step',
+            //     href: '/forms/multi-step',
+            //     current: currentPathname === '/forms/multi-step',
+            // },
         ],
     },
     {
