@@ -86,7 +86,7 @@ export default function Dashboard({ children }: PropsWithChildren) {
                 </div>
             </div>
 
-            <div className="lg:pl-64 flex flex-col flex-1 bg-white text-slate-800 dark:bg-slate-950 dark:text-gray-100">
+            <div className="lg:pl-64 flex flex-col flex-1 min-h-screen bg-white text-slate-800 dark:bg-slate-950 dark:text-gray-100">
                 <main className="flex-1">
                     <StickyBar setSidebarOpen={setSidebarOpen} />
 
