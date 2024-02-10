@@ -14,6 +14,18 @@ export const navigation = (currentPathname: string): NavLink[] => [
         current: currentPathname === '/',
     },
     {
+        name: 'Forms',
+        href: '/forms',
+        Icon: InboxIcon,
+        current: currentPathname.includes('forms'),
+    },
+    {
+        name: 'Tables',
+        href: '/tables',
+        Icon: ChartBarIcon,
+        current: currentPathname.includes('tables'),
+    },
+    {
         name: 'UI Elements',
         href: '#',
         Icon: TableCellsIcon,
@@ -43,15 +55,8 @@ export const navigation = (currentPathname: string): NavLink[] => [
                 href: '/breadcrumbs',
                 current: currentPathname.includes('breadcrumbs'),
             },
-            {
-                name: 'Tables',
-                href: '/tables',
-                current: currentPathname.includes('tables'),
-            },
         ],
     },
-    { name: 'Documents', href: '#', Icon: InboxIcon, current: false },
-    { name: 'Reports', href: '#', Icon: ChartBarIcon, current: false },
 ];
 
 // export const navigation = (currentPathname: string) => [

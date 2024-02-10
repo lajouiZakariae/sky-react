@@ -1,5 +1,5 @@
-import { Alert } from 'src/lib/ui/Alert';
-import { ShadowAlert } from 'src/lib/ui/ShadowAlert';
+import { Alert } from 'src/lib/ui/alerts/Alert';
+import { ShadowAlert } from 'src/lib/ui/alerts/ShadowAlert';
 
 export default function AlertsPage() {
     return (

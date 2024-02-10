@@ -1,4 +1,4 @@
-import Table from 'src/lib/ui/Table';
+import Table from 'src/lib/ui/tables/Table';
 
 export default function TablesPage() {
     return (

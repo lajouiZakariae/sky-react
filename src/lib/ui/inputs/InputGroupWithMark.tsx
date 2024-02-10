@@ -24,12 +24,12 @@ export default function InputGroupWithMark({
                     type="email"
                     name="email"
                     id="email"
-                    className={`rounded block w-full pr-10 sm:text-sm dark:bg-slate-800 dark:text-white dark:caret-slate-300 ${
+                    className={`rounded block w-full pr-10 sm:text-sm dark:bg-slate-900 dark:text-white dark:caret-slate-300 ${
                         error
                             ? 'border-red-500 placeholder-red-500 focus:outline-none focus:ring-red-500 focus:border-red-500'
                             : success
                             ? 'border-green-600 placeholder-green-600 focus:outline-none focus:ring-green-600 focus:border-green-600'
-                            : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-slate-800 dark:border-slate-700'
+                            : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-slate-900 dark:border-slate-700'
                     }`}
                     placeholder="you@example.com"
                     defaultValue="zakariaelajoui"
