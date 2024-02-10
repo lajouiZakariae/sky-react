@@ -23,7 +23,7 @@ export default function StickyBar({
         <div className="sticky top-0 z-10 flex-shrink-0 flex h-16 border-b border-gray-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-950">
             <button
                 type="button"
-                className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
+                className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
                 onClick={() => setSidebarOpen(true)}
             >
                 <span className="sr-only">Open sidebar</span>
