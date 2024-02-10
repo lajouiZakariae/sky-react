@@ -20,10 +20,10 @@ export default function StickyBar({
     setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 }) {
     return (
-        <div className="sticky top-0 z-10 flex-shrink-0 flex h-16 border-b border-gray-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-950">
+        <div className="sticky top-0 z-10 flex-shrink-0 flex h-16 border-b border-gray-200 dark:border-slate-800 shadow-sm bg-white text-slate-800 dark:bg-slate-950 dark:text-gray-100">
             <button
                 type="button"
-                className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
+                className="px-4 border-r border-gray-200 dark:border-slate-800 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 lg:hidden"
                 onClick={() => setSidebarOpen(true)}
             >
                 <span className="sr-only">Open sidebar</span>
@@ -58,19 +58,12 @@ export default function StickyBar({
                     </form>
                 </div>
                 <div className="ml-4 flex items-center md:ml-6">
-                    {/* <button
-                        type="button"
-                        className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        <span className="sr-only">View notifications</span>
-                        <BellIcon className="h-6 w-6" aria-hidden="true" />
-                    </button> */}
                     <DarkodeSwitch />
 
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
                         <div className="flex items-center space-x-3">
-                            <div>
+                            <div className="hidden lg:block">
                                 <h3 className="text-slate-800 dark:text-gray-50">
                                     Zakariae Lajoui
                                 </h3>
