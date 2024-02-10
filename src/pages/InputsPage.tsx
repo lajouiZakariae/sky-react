@@ -4,7 +4,6 @@ export default function InputsPage() {
     return (
         <div className="pb-40">
             <Input />
-            <Input />
         </div>
     );
 }

@@ -54,61 +54,65 @@ export function ButtonsPage() {
 
     return (
         <>
-            <h1 className="text-2xl font-semibold mb-2">Buttons</h1>
+            <div className="mb-2">
+                <h1 className="text-2xl font-semibold mb-2">Buttons</h1>
 
-            <Plates>
                 <button
                     type="button"
                     className="px-4 py-2 min-w-20 text-sm inline-flex items-center justify-center border border-gray-300 rounded-md shadow-sm font-medium text-gray-700 bg-white hover:bg-gray-100 dark:text-white dark:bg-gray-600 dark:border-gray-600 dark:hover:border-gray-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500"
                 >
                     Edit
                 </button>
-            </Plates>
+            </div>
 
             {Buttons.map(Btn => (
                 <Fragment key={Btn.name}>
                     <SubHeading>{Btn.name}</SubHeading>
 
-                    {variants.map(variant => (
-                        <Plates key={variant}>
-                            <div className="flex items-center flex-col max-md:space-y-3 md:flex-row md:space-x-5">
-                                {sizes.map(size => (
-                                    <Btn
-                                        size={size}
-                                        variant={variant}
-                                        key={size}
-                                    >
-                                        Click me
-                                    </Btn>
-                                ))}
-                            </div>
-                        </Plates>
-                    ))}
+                    <div className="space-y-3">
+                        {variants.map(variant => (
+                            <Fragment key={variant}>
+                                <div className="flex items-center flex-col max-md:space-y-3 md:flex-row md:space-x-5">
+                                    {sizes.map(size => (
+                                        <Btn
+                                            size={size}
+                                            variant={variant}
+                                            key={size}
+                                        >
+                                            Click me
+                                        </Btn>
+                                    ))}
+                                </div>
+                            </Fragment>
+                        ))}
+                    </div>
                 </Fragment>
             ))}
 
             <Fragment>
                 <SubHeading>{CircleButton.name}</SubHeading>
 
-                {variants.map(variant => (
-                    <Plates key={variant}>
-                        <div className="flex items-center flex-col max-md:space-y-3 md:flex-row md:space-x-5">
-                            {sizes.map((size, index) => (
-                                <CircleButton
-                                    size={size}
-                                    variant={variant}
-                                    key={size}
-                                >
-                                    <PlusIcon
-                                        className={
-                                            CircleButtonsIconSizes[index]
-                                        }
-                                    />
-                                </CircleButton>
-                            ))}
-                        </div>
-                    </Plates>
-                ))}
+                <div className="space-y-3">
+                    {variants.map(variant => (
+                        <Fragment key={variant}>
+                            <div className="flex items-center flex-col max-md:space-y-3 md:flex-row md:space-x-5">
+                                {sizes.map((size, index) => (
+                                    <CircleButton
+                                        size={size}
+                                        variant={variant}
+                                        key={size}
+                                    >
+                                        <PlusIcon
+                                            className={
+                                                CircleButtonsIconSizes[index]
+                                            }
+                                        />
+                                    </CircleButton>
+                                ))}
+                            </div>
+                        </Fragment>
+                    ))}
+                </div>
             </Fragment>
         </>
     );

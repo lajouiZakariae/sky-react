@@ -8,12 +8,12 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
     const hasDropDown = links && links.length > 0;
     const isDropDownActive = links?.some(({ current }) => current);
 
-    const currentLinkStyle = 'bg-sky-50 text-sky-600';
+    const currentLinkStyle = 'bg-sky-50 text-sky-600 dark:bg-slate-900';
 
     const navItemLinkStyle = `group relative flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors duration-300 ${
         current
             ? currentLinkStyle
-            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+            : 'text-gray-500 hover:bg-gray-50 hover:text-slate-900 dark:text-gray-300 dark:hover:bg-slate-900 dark:hover:text-white'
     }`;
 
     if (!hasDropDown) {
@@ -36,14 +36,14 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
                         className={`group w-full relative flex items-center p-2 text-sm font-medium rounded-md ${
                             isDropDownActive
                                 ? currentLinkStyle
-                                : 'text-gray-500/90 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+                                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                         }`}
                     >
                         <Icon
                             className={`mr-3 flex-shrink-0 size-6 ${
                                 isDropDownActive
                                     ? ''
-                                    : 'text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-300'
+                                    : 'text-gray-500 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-300'
                             }`}
                             aria-hidden="true"
                         />
@@ -63,8 +63,8 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
                                     to={href}
                                     className={`group relative flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                                         current
-                                            ? 'text-slate-800'
-                                            : 'text-gray-500/90 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+                                            ? 'text-slate-800 dark:text-sky-600'
+                                            : 'text-gray-500 hover:bg-slate-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-slate-900 dark:hover:text-white'
                                     }`}
                                 >
                                     <span className="inline-flex items-center justify-center w-6 mr-3">

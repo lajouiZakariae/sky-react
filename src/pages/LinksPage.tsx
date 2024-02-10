@@ -95,14 +95,8 @@ export function Links() {
 }
 export default function LinksPage() {
     return (
-        <div>
-            <div className="min-h-16 p-4 bg-ui-dark space-y-3 dark">
-                <Links />
-            </div>
-
-            <div className="min-h-16 p-4 bg-white space-y-3">
-                <Links />
-            </div>
+        <div className="min-h-16 p-4 space-y-3">
+            <Links />
         </div>
     );
 }
