@@ -64,7 +64,7 @@ export default function StickyBar({
                     <Menu as="div" className="ml-3 relative">
                         <div className="flex items-center space-x-3">
                             <div className="hidden lg:block">
-                                <h3 className="text-slate-800 dark:text-gray-50">
+                                <h3 className="text-sm text-slate-800 dark:text-gray-50">
                                     Zakariae Lajoui
                                 </h3>
                                 <p className="text-xs italic text-gray-500 dark:text-gray-300">
