@@ -1,12 +1,9 @@
 import { Menu } from '@headlessui/react';
-import {
-    Bars3BottomLeftIcon,
-    BellIcon,
-    EyeIcon,
-} from '@heroicons/react/16/solid';
+import { Bars3BottomLeftIcon } from '@heroicons/react/16/solid';
 import { Dispatch, SetStateAction } from 'react';
 import DropDownTransition from '../DropDownTransition';
-import DarkodeSwitch from './DarkModeSwitcher';
+import DarkodeSwitcher from './DarkModeSwitcher';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 
 const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -42,14 +39,14 @@ export default function StickyBar({
                         </label>
                         <div className="relative w-full text-gray-400 focus-within:text-gray-600">
                             <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                                <EyeIcon
+                                <MagnifyingGlassIcon
                                     className="h-5 w-5"
                                     aria-hidden="true"
                                 />
                             </div>
                             <input
                                 id="search-field"
-                                className="block w-full h-full pl-8 pr-3 py-2 border-transparent placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm bg-transparent dark:caret-slate-200"
+                                className="block w-full h-full pl-8 pr-3 py-2 border-transparent bg-transparent dark:text-gray-100"
                                 placeholder="Search"
                                 type="search"
                                 name="search"
@@ -58,7 +55,7 @@ export default function StickyBar({
                     </form>
                 </div>
                 <div className="ml-4 flex items-center md:ml-6">
-                    <DarkodeSwitch />
+                    <DarkodeSwitcher />
 
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
