@@ -56,7 +56,6 @@ export default function StickyBar({
                 </div>
                 <div className="ml-4 flex items-center md:ml-6">
                     <DarkodeSwitcher />
-
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
                         <div className="flex items-center space-x-3">

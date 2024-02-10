@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 import { NavLink } from 'src/layout/Dashboard/types/types';
-import { Disclosure, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/16/solid';
-import { Fragment } from 'react';
+import DropDownTransition from '../DropDownTransition';
 
 export default function NavItem({ name, href, Icon, current, links }: NavLink) {
     const hasDropDown = links && links.length > 0;
-
     const isDropDownActive = links?.some(({ current }) => current);
 
-    const navItemLinkStyle = `w-full group relative flex items-center px-2 py-2 text-sm font-medium rounded-md transition duration-300 ${
+    const currentLinkStyle = 'bg-sky-50 text-sky-600 dark:bg-slate-900';
+
+    const navItemLinkStyle = `group relative flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors duration-300 ${
         current
-            ? 'bg-indigo-100/50 text-indigo-700/80'
-            : 'text-gray-300 hover:text-gray-400'
+            ? currentLinkStyle
+            : 'text-gray-500 hover:bg-gray-50 hover:text-slate-900 dark:text-gray-300 dark:hover:bg-slate-900 dark:hover:text-white'
     }`;
 
     if (!hasDropDown) {
@@ -31,9 +32,19 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
         <Disclosure>
             {({ open }) => (
                 <>
-                    <Disclosure.Button className={`${navItemLinkStyle}`}>
+                    <Disclosure.Button
+                        className={`group w-full relative flex items-center p-2 text-sm font-medium rounded-md ${
+                            isDropDownActive
+                                ? currentLinkStyle
+                                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+                        }`}
+                    >
                         <Icon
-                            className={`mr-3 flex-shrink-0 size-6`}
+                            className={`mr-3 flex-shrink-0 size-6 ${
+                                isDropDownActive
+                                    ? ''
+                                    : 'text-gray-500 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-300'
+                            }`}
                             aria-hidden="true"
                         />
                         {name}
@@ -44,15 +55,7 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
                         />
                     </Disclosure.Button>
 
-                    <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                    >
+                    <DropDownTransition>
                         <Disclosure.Panel className="flex flex-col">
                             {links?.map(({ name, href, current }) => (
                                 <Link
@@ -60,13 +63,13 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
                                     to={href}
                                     className={`group relative flex items-center px-2 py-2 text-sm font-medium rounded-md ${
                                         current
-                                            ? 'text-slate-800'
-                                            : 'text-gray-500/90 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+                                            ? 'text-slate-800 dark:text-sky-600'
+                                            : 'text-gray-500 hover:bg-slate-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-slate-900 dark:hover:text-white'
                                     }`}
                                 >
                                     <span className="inline-flex items-center justify-center w-6 mr-3">
                                         {current ? (
-                                            <span className="size-[6px] bg-indigo-700/80 rounded-full"></span>
+                                            <span className="size-[6px] bg-sky-700/80 rounded-full"></span>
                                         ) : (
                                             <span className="size-[4px] bg-gray-500/80 rounded-full"></span>
                                         )}
@@ -75,7 +78,7 @@ export default function NavItem({ name, href, Icon, current, links }: NavLink) {
                                 </Link>
                             ))}
                         </Disclosure.Panel>
-                    </Transition>
+                    </DropDownTransition>
                 </>
             )}
         </Disclosure>
