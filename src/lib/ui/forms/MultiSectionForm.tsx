@@ -4,7 +4,7 @@ import {
     ChevronDownIcon,
     ExclamationCircleIcon,
 } from '@heroicons/react/16/solid';
-import { Fragment, PropsWithChildren, useEffect, useRef } from 'react';
+import { PropsWithChildren, useEffect, useRef } from 'react';
 import DropDownTransition from 'src/layout/Dashboard/DropDownTransition';
 
 export function FormSection({
@@ -149,7 +149,7 @@ export default function MultiSectionForm() {
                     </div>
                 </FormSection>
 
-                <div className="space-y-4">
+                <FormSection title="Section Two">
                     <div>
                         <label
                             htmlFor="email"
@@ -292,7 +292,7 @@ export default function MultiSectionForm() {
                             ) : null}
                         </div>
                     </div>
-                </div>
+                </FormSection>
 
                 <div>
                     <button

@@ -7,6 +7,10 @@ import HomePage from 'src/pages/HomePage';
 import TablesPage from 'src/pages/TablesPage';
 import InputsPage from '../pages/InputsPage';
 import LinksPage from 'src/pages/LinksPage';
+import MultiSectionFormPage from 'src/pages/MultiSectionFormPage';
+import SimpleTablePage from 'src/pages/tables/SimpleTablePage';
+import CategorizedTablePage from 'src/pages/tables/CategorizedTablePage';
+import TableWithSubRowsPage from 'src/pages/tables/TableWithSubrowsPage';
 
 export const authRoutes: RouteObject[] = [
     {
@@ -15,31 +19,43 @@ export const authRoutes: RouteObject[] = [
     },
     {
         path: 'tables',
-        Component: TablesPage,
-    },
-    {
-        path: 'buttons',
-        Component: ButtonsPage,
-    },
-    {
-        path: 'breadcrumbs',
-        Component: BreadCrumbsPage,
+        children: [
+            { index: true, Component: SimpleTablePage },
+            { path: 'categorized', Component: CategorizedTablePage },
+            { path: 'with-subrows', Component: TableWithSubRowsPage },
+        ],
     },
     {
         path: 'forms',
-        Component: FormsPage,
+        children: [
+            { index: true, Component: FormsPage },
+            { path: 'multi-section', Component: MultiSectionFormPage },
+        ],
     },
     {
-        path: 'alerts',
-        Component: AlertsPage,
-    },
-    {
-        path: 'inputs',
-        Component: InputsPage,
-    },
-    {
-        path: 'links',
-        Component: LinksPage,
+        path: 'ui-elements',
+        children: [
+            {
+                path: 'buttons',
+                Component: ButtonsPage,
+            },
+            {
+                path: 'breadcrumbs',
+                Component: BreadCrumbsPage,
+            },
+            {
+                path: 'alerts',
+                Component: AlertsPage,
+            },
+            {
+                path: 'inputs',
+                Component: InputsPage,
+            },
+            {
+                path: 'links',
+                Component: LinksPage,
+            },
+        ],
     },
     {
         path: '*',

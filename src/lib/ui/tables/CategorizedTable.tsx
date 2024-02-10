@@ -1,37 +1,46 @@
-export default function Table() {
+export function CategorizedTable() {
     return (
         <div className="overflow-hidden overflow-x-auto border rounded-lg dark:border-slate-900 dark:bg-slate-900">
-            <table className="min-w-full divide-y divide-gray-200 dark:divide-slate-700/50">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead className="bg-slate-50 dark:bg-slate-900">
                     <tr>
                         <th
                             scope="col"
-                            className="px-6 py-3 text-start text-xs font-medium text-gray-500 dark:text-gray-300 uppercase"
+                            className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                         >
                             Name
                         </th>
                         <th
                             scope="col"
-                            className="px-6 py-3 text-start text-xs font-medium text-gray-500 dark:text-gray-300 uppercase"
+                            className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                         >
                             Age
                         </th>
                         <th
                             scope="col"
-                            className="px-6 py-3 text-start text-xs font-medium text-gray-500 dark:text-gray-300 uppercase"
+                            className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                         >
                             Address
                         </th>
                         <th
                             scope="col"
-                            className="px-6 py-3 text-end text-xs font-medium text-gray-500 dark:text-gray-300 uppercase"
+                            className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase"
                         >
                             Action
                         </th>
                     </tr>
                 </thead>
 
-                <tbody className="divide-y divide-gray-200 dark:divide-slate-700/50 [&_tr:odd]:bg-white [&_tr:even]:bg-gray-500">
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                    <tr>
+                        <td
+                            colSpan={4}
+                            className="px-6 py-2 text-xs text-slate-700 dark:text-gray-300 bg-gray-100 dark:bg-slate-800"
+                        >
+                            January, 2022
+                        </td>
+                    </tr>
+
                     <tr>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                             John Brown

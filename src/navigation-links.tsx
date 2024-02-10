@@ -3,8 +3,10 @@ import {
     HomeIcon,
     InboxIcon,
     TableCellsIcon,
+    TvIcon,
 } from '@heroicons/react/16/solid';
 import { NavLink } from './layout/Dashboard/types/types';
+import { DeviceTabletIcon } from '@heroicons/react/16/solid';
 
 export const navigation = (currentPathname: string): NavLink[] => [
     {
@@ -15,15 +17,42 @@ export const navigation = (currentPathname: string): NavLink[] => [
     },
     {
         name: 'Forms',
-        href: '/forms',
-        Icon: InboxIcon,
-        current: currentPathname.includes('forms'),
+        href: '#',
+        Icon: DeviceTabletIcon,
+        links: [
+            {
+                name: 'Simple',
+                href: '/forms',
+                current: currentPathname === '/forms',
+            },
+            {
+                name: 'Multi Section',
+                href: '/forms/multi-section',
+                current: currentPathname === '/forms/multi-section',
+            },
+        ],
     },
     {
         name: 'Tables',
-        href: '/tables',
-        Icon: ChartBarIcon,
-        current: currentPathname.includes('tables'),
+        href: '#',
+        Icon: TableCellsIcon,
+        links: [
+            {
+                name: 'Simple',
+                href: '/tables',
+                current: currentPathname === '/tables',
+            },
+            {
+                name: 'Categorized',
+                href: '/tables/categorized',
+                current: currentPathname === '/tables/categorized',
+            },
+            {
+                name: 'With Subrows',
+                href: '/tables/with-subrows',
+                current: currentPathname === '/tables/with-subrows',
+            },
+        ],
     },
     {
         name: 'UI Elements',
@@ -32,22 +61,22 @@ export const navigation = (currentPathname: string): NavLink[] => [
         links: [
             {
                 name: 'Alerts',
-                href: '/alerts',
+                href: '/ui-elements/alerts',
                 current: currentPathname.includes('alerts'),
             },
             {
                 name: 'Buttons',
-                href: '/buttons',
+                href: '/ui-elements/buttons',
                 current: currentPathname.includes('buttons'),
             },
             {
                 name: 'Inputs',
-                href: '/inputs',
+                href: '/ui-elements/inputs',
                 current: currentPathname.includes('inputs'),
             },
             {
                 name: 'Links',
-                href: '/links',
+                href: '/ui-elements/links',
                 current: currentPathname.includes('links'),
             },
             {
