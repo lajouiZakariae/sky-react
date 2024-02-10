@@ -8,23 +8,12 @@ import SidebarContent from './ui/SidebarContent';
 export default function Dashboard({ children }: PropsWithChildren) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    useEffect(() => {
-        document.body.classList.add(
-            ...[
-                'bg-white',
-                'text-slate-800',
-                'dark:bg-slate-950',
-                'dark:text-gray-100',
-            ]
-        );
-    }, []);
-
     return (
         <div>
             <Transition.Root show={sidebarOpen} as={Fragment}>
                 <Dialog
                     as="div"
-                    className="fixed inset-0 flex z-40 md:hidden"
+                    className="fixed inset-0 flex z-40 lg:hidden"
                     onClose={setSidebarOpen}
                 >
                     <Transition.Child
@@ -48,7 +37,7 @@ export default function Dashboard({ children }: PropsWithChildren) {
                         leaveFrom="translate-x-0"
                         leaveTo="-translate-x-full"
                     >
-                        <div className="relative flex-1 flex flex-col max-w-xs w-full">
+                        <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white text-slate-800 dark:bg-slate-950 dark:text-gray-100">
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-in-out duration-300"
@@ -88,7 +77,7 @@ export default function Dashboard({ children }: PropsWithChildren) {
             </Transition.Root>
 
             {/* Static sidebar for desktop */}
-            <div className="hidden border-r border-gray-200 dark:border-slate-800 md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+            <div className="hidden bg-white text-slate-800 dark:bg-slate-950 dark:text-gray-100 border-r border-gray-200 dark:border-slate-800 lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
                 {/* Sidebar component, swap this element with another sidebar if you like */}
                 <div className="flex-1 flex flex-col min-h-0 ">
                     <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
