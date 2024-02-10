@@ -1,10 +1,4 @@
-import {
-    ChartBarIcon,
-    HomeIcon,
-    InboxIcon,
-    TableCellsIcon,
-    TvIcon,
-} from '@heroicons/react/16/solid';
+import { HomeIcon, TableCellsIcon } from '@heroicons/react/16/solid';
 import { NavLink } from './layout/Dashboard/types/types';
 import { DeviceTabletIcon } from '@heroicons/react/16/solid';
 
